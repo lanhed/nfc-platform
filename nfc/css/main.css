@@ -1,0 +1,115 @@
+html,body {
+	font-size: 1.4rem;
+	margin: 10px;
+}
+
+body {
+	padding-top: 50px;
+}
+
+img {
+	width:100%;
+}
+
+a,a:link, a:visited {
+	text-decoration: none;
+	color:#000;
+}
+
+.frontpage {
+	text-align: center;
+}
+.frontpage p {
+	font-size: 1.2em;
+}
+.frontpage .login {
+	padding-top: 20px;
+    display: inline-block;
+}
+.frontpage .mockup {
+	padding-top:20px;
+}
+.user {
+	text-align: center;
+	padding-bottom: 20px;
+}
+.user .user-image {
+	background: url(../images/blank-profile-picture.png) top center / 160px 160px;
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
+	margin: 0 auto;
+}
+.user p {
+	font-size: 0.9em;
+}
+
+.cta {
+	text-align: center;
+}
+
+.details-add .js-toggle-input .js-input {
+	display: none;
+}
+.details-add .js-toggle-input .js-title {
+	display: inline;
+}
+.details-add .js-toggle-input.edit .js-input {
+	display: inline-block;
+}
+.details-add .js-toggle-input.edit .js-title {
+	display: none;
+}
+
+
+.chip-name h2 {
+	font-size: 18px;
+}
+.chip-name p {
+	font-size: 0.7em;
+	font-style: italic;
+}
+
+.tab-content {}
+
+.service-wrapper {
+	margin-top:10px;
+}
+
+.service-container .service-description {
+	margin-top:10px;
+}
+.service-container .btn-done {
+	margin-top: 20px;
+}
+.service-wrapper:not(:first-child) {
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+.service-wrapper .service-icon, .service-container .service-icon {
+	width: 27%;
+	display: inline-block;
+	padding-right: 3%;
+	max-width: 128px;
+}
+
+.service-wrapper .service-text, .service-container .service-text {
+    display: inline-block;
+    vertical-align: top;
+    width: 70%;
+}
+.service-wrapper .service-text p {
+	font-size: 0.8em;
+	margin: 0;
+}
+.service-container .service-text p, .service-container p {
+	font-size: 0.9em;
+}
+.service-wrapper .service-text h3, .service-container .service-text h3 {
+	margin:0;
+	font-size: 15px;
+}
+.service-wrapper a, .service-wrapper:link, .service-wrapper a:visited {
+	color:#fff;
+	float: right;
+}

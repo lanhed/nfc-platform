@@ -1,0 +1,96 @@
+/********************************************************************************************/
+/* Reset
+/* Page layout
+/* Typography and links
+/* Common and reusable styles
+/* Page or/and section specific styles
+/********************************************************************************************/
+/* Reset
+/********************************************************************************************/
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, 
+code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, 
+figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+	border: 0; 
+	margin: 0; 
+	padding: 0; 
+	outline: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { 
+    display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+
+ul, ol {
+	list-style: none;
+}
+
+table { 
+	border-collapse: collapse; 
+	border-spacing: 0; 
+}
+
+caption, th { 
+	text-align: left; 
+}
+
+/********************************************************************************************/
+/* Page layout, graphics and navigation
+/********************************************************************************************/
+
+body {
+	color: #000;
+	font-family: arial, helvetica, Trebuchet MS;
+	font-size: 62.5%;
+}
+
+/********************************************************************************************/
+/* Typography and links
+/********************************************************************************************/
+
+/* Links */
+a { 
+	outline: none; 
+	text-decoration: none; 
+}
+
+a img { 
+	border: none; 
+}
+
+a:link, a:visited { 
+	color: blue; 
+}
+
+a:hover, a:active { 
+	color: blue; 
+}
+
+a:focus { 
+	color: blue; 
+}
+
+/********************************************************************************************/
+/* Common and reusable styles
+/********************************************************************************************/
+
+
+
+/********************************************************************************************/
+/* Page or section specific styles
+/********************************************************************************************/
+
+
+
+/* Page or section */
+/********************************************************************************************/
+
+
+
+/* comment */
