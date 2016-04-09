@@ -4,6 +4,7 @@
 		userid: "04:84:FE:12:FF:38:80",
 		
 		serviceId: null,
+		serviceKey: null,
 
 		installedServices: [],
 
@@ -12,7 +13,7 @@
 			this.serviceId = serviceId;
 
 			var ref = new Firebase("https://nfc-service.firebaseio.com/users/");
-			ref.child(this.userid).on('value', $.proxy(this.onUserData,this));
+			ref.child(this.userid).once('value', $.proxy(this.onUserData, this));
 		},
 
 		onUserData: function(snapshot) {
@@ -20,7 +21,13 @@
 			var that = this;
 
 			$.each(this.data.installed, function(key, service){
-				that.installedServices.push(service.uid);
+				var uid = service.uid;
+				that.installedServices.push(uid);
+
+				if (uid.indexOf(that.serviceId) !== -1) {
+					that.serviceKey = key;
+				}
+				
 			});
 
 			that.setupEventListeners();
@@ -48,6 +55,8 @@
 				_input[0].setSelectionRange(0, _input[0].value.length);
 
 			});
+
+			$('#service-container').on('click', '.btn-danger', $.proxy(this.removeService, this));
 
 			$(document).on('mouseup', function(e) {
 				var _container = $('.js-toggle-input.edit');
@@ -83,6 +92,19 @@
 			var ref = new Firebase('https://nfc-service.firebaseio.com/users/'+this.userid+'/installed');
 			var pushRef = ref.push({'uid':this.serviceId});
 			window.location.href="/nfc/services.html";
+		},
+
+		removeService: function(e) {
+			var ref = new Firebase('https://nfc-service.firebaseio.com/users/'+this.userid+'/installed/'+this.serviceKey);
+			ref.remove($.proxy(this.onRemoveComplete, this));
+		},
+
+		onRemoveComplete: function(error) {
+			if (error) {
+				console.log('syncronisation failed');
+			} else {
+				//window.location.href="services.html";
+			}
 		},
 
 		getData: function(uid) {
@@ -122,6 +144,7 @@
 					'<div class="service-description">'+service.description+'</div>'+
 					'<div class="details-container"></div>'+
 					'<button class="btn btn-default btn-ok">OK</button>'+
+					'<button class="btn btn-default btn-danger">Remove</button>'+
 				'</div>');
 
 				var fields = service.connection.fields;
@@ -137,7 +160,7 @@
 					template.find('.details-container').append(detailsTemplate);
 				}
 
-				if (that.installedServices.indexOf(that.serviceId) === 0) {
+				if (that.installedServices.indexOf(that.serviceId) !== -1) {
 					$('#service-container').append(template2);
 				} else {
 					$('#service-container').append(template);

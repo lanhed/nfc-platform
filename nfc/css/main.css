@@ -79,8 +79,11 @@ a,a:link, a:visited {
 .service-container .service-description {
 	margin-top:10px;
 }
-.service-container .btn-done {
+.service-container .btn-default, .service-container .btn-danger {
 	margin-top: 20px;
+}
+.service-container .btn-danger {
+	margin-left:10px;
 }
 .service-wrapper:not(:first-child) {
 	padding-top: 10px;
